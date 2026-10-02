@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work Dash</title>
+<meta name="description" content="Work Dash — quick access to five ChatGPT Projects and guidance on when to use each one.">
+<style>
+:root{
+  --green:#123f32;
+  --green2:#1c5a46;
+  --brown:#8a5a2b;
+  --gold:#c89b4b;
+  --cream:#f7f3ea;
+  --paper:#fffdf8;
+  --ink:#202724;
+  --muted:#68706c;
+  --line:#d8d1c5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 24px 60px}
+.hero{background:var(--green);color:#fff;border-radius:20px;padding:30px 34px;margin-bottom:24px}
+.hero h1{margin:0 0 8px;font-size:44px;line-height:1}
+.hero p{margin:0;font-size:20px;line-height:1.45;max-width:860px}
+.rule{margin-top:18px;padding:14px 16px;background:rgba(255,255,255,.10);border-radius:12px;font-size:17px}
+.routing{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:24px}
+.routing h2{margin:0 0 12px;color:var(--green);font-size:28px}
+.route-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:0 24px;font-size:17px}
+.route-grid div{padding:10px 0;border-bottom:1px solid #ece7dc}
+.route-grid strong{color:var(--green)}
+.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--paper);border:2px solid var(--green);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;min-height:310px;box-shadow:0 3px 12px rgba(0,0,0,.03)}
+.card.memory{grid-column:1/-1;border-color:var(--brown)}
+.head{display:flex;align-items:center;gap:14px;padding:18px 20px;background:var(--green);color:white}
+.memory .head{background:var(--brown)}
+.num{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#222;font-weight:800;font-size:20px;flex:0 0 auto}
+.head h2{margin:0;font-size:28px}
+.body{padding:20px;display:flex;flex-direction:column;gap:15px;flex:1}
+.purpose{font-size:19px;line-height:1.42}
+.use{background:#eef2ed;border-radius:12px;padding:14px 15px;font-size:17px;line-height:1.4}
+.use b{color:var(--green)}
+.example{font-size:15px;line-height:1.45;color:var(--muted)}
+.open{display:block;text-decoration:none;text-align:center;background:var(--green);color:#fff;padding:18px 20px;font-size:20px;font-weight:800;letter-spacing:.2px}
+.memory .open{background:var(--brown)}
+.open:hover{filter:brightness(1.08)}
+.note{margin-top:24px;background:#f0ebe1;border-left:5px solid var(--gold);padding:14px 16px;border-radius:10px;font-size:15px;line-height:1.5}
+footer{text-align:center;color:var(--muted);font-size:14px;padding-top:24px}
+@media(max-width:800px){
+  .projects{grid-template-columns:1fr}
+  .card.memory{grid-column:auto}
+  .route-grid{grid-template-columns:1fr}
+  .hero h1{font-size:34px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <h1>Work Dash</h1>
+    <p>Your five ChatGPT Projects, what each one owns, and when to use it.</p>
+    <div class="rule"><strong>Simple rule:</strong> when the current truth changes, update Operating Memory. Then send the actual work to the Project that owns it.</div>
+  </section>
+
+  <section class="routing">
+    <h2>Which Project do I use?</h2>
+    <div class="route-grid">
+      <div>A fact, workflow, repo, schedule, link, or standing rule changed</div><div><strong>Operating Memory</strong></div>
+      <div>Something recurring must actually finish and be verified</div><div><strong>Completion Officer</strong></div>
+      <div>I need a finished report, memo, PDF, Word file, email, or other deliverable</div><div><strong>Production Desk</strong></div>
+      <div>I want grants, RFPs, contracts, prospects, reply opportunities, or qualified leads</div><div><strong>Business Development Desk</strong></div>
+      <div>I need to build, audit, test, fix, or deploy an app</div><div><strong>App Factory</strong></div>
+    </div>
+  </section>
+
+  <main class="projects">
+    <section class="card memory">
+      <div class="head"><div class="num">1</div><h2>Operating Memory</h2></div>
+      <div class="body">
+        <div class="purpose"><strong>The source of truth.</strong> Stores the current state of your businesses, systems, schedules, repositories, URLs, workflows, standing rules, and important decisions.</div>
+        <div class="use"><b>Use it when:</b> something important changes. Update the canonical state so later work starts from the right facts.</div>
+        <div class="example">Example: “Update the canonical state: Woods Run now uses loggingchance/woods-run-digest. Mark the old repo as superseded.”</div>
+      </div>
+      <a class="open" href="https://chatgpt.com/g/g-p-6abeeea855408191ac129516ce260d04-operating-memory/c/6abef084-3684-83e8-849e-aa56245d4a8e" target="_blank" rel="noopener">OPEN OPERATING MEMORY</a>
+    </section>
+
+    <section class="card">
+      <div class="head"><div class="num">2</div><h2>Completion Officer</h2></div>
+      <div class="body">
+        <div class="purpose"><strong>Owns end-state verification.</strong> Checks whether recurring work actually finished, retries safe failures, repairs predictable problems, and escalates only real blockers.</div>
+        <div class="use"><b>Use it when:</b> a scheduled or delegated workflow must complete, be checked, or be repaired.</div>
+        <div class="example">Example: “Review tomorrow’s Woods Run cycle. Tell me whether it is properly configured and whether any repair is needed now.”</div>
+      </div>
+      <a class="open" href="https://chatgpt.com/g/g-p-6abeeeb98c7881918bf82bd7a453ce6a-completion-officer/c/6abef0c0-6638-83e8-aa5d-f5938ea63581" target="_blank" rel="noopener">OPEN COMPLETION OFFICER</a>
+    </section>
+
+    <section class="card">
+      <div class="head"><div class="num">3</div><h2>Production Desk</h2></div>
+      <div class="body">
+        <div class="purpose"><strong>Owns finished deliverables.</strong> Turns rough material into completed reports, Word files, PDFs, memos, emails, presentations, spreadsheets, and client-ready outputs.</div>
+        <div class="use"><b>Use it when:</b> you need the finished thing, not just research notes or drafting advice.</div>
+        <div class="example">Example: “Turn this research into a concise client memo and a finished Word file.”</div>
+      </div>
+      <a class="open" href="https://chatgpt.com/g/g-p-6abeeec69e8081919a7d00d4e1f12b0b-production-desk/c/6abef0a3-2f60-83e8-97f7-dc419a83c7e3" target="_blank" rel="noopener">OPEN PRODUCTION DESK</a>
+    </section>
+
+    <section class="card">
+      <div class="head"><div class="num">4</div><h2>Business Development Desk</h2></div>
+      <div class="body">
+        <div class="purpose"><strong>Owns opportunity finding and qualification.</strong> Looks for grants, RFPs, contracts, prospects, reply opportunities, and other business leads actually worth your attention.</div>
+        <div class="use"><b>Use it when:</b> you want a qualified opportunity queue rather than a pile of links.</div>
+        <div class="example">Example: “Find the best current forestry-related opportunities worth pursuing this week.”</div>
+      </div>
+      <a class="open" href="https://chatgpt.com/c/6abef0d6-cd6c-83e8-ad93-728fb3bbac71" target="_blank" rel="noopener">OPEN BUSINESS DEVELOPMENT DESK</a>
+    </section>
+
+    <section class="card">
+      <div class="head"><div class="num">5</div><h2>App Factory</h2></div>
+      <div class="body">
+        <div class="purpose"><strong>Owns apps and tools.</strong> Builds, audits, tests, fixes, and deploys web apps and lightweight software tools using established conventions and acceptance tests.</div>
+        <div class="use"><b>Use it when:</b> an idea, formula, publication, spreadsheet, or manual process should become an app—or an existing app needs work.</div>
+        <div class="example">Example: “Turn this calculator into a small web app and test it before deployment.”</div>
+      </div>
+      <a class="open" href="https://chatgpt.com/c/6abef0ef-f7b8-83e8-8027-73403541da36" target="_blank" rel="noopener">OPEN APP FACTORY</a>
+    </section>
+  </main>
+
+  <div class="note"><strong>Note:</strong> the last two links are the chat links you supplied. If you later want them to point to the Project home rather than the current chat, replace those URLs with the Project URLs.</div>
+  <footer>Work Dash</footer>
+</div>
+</body>
+</html>
