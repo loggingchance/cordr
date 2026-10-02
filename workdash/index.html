@@ -45,11 +45,43 @@ body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helveti
 .memory .open{background:var(--brown)}
 .open:hover{filter:brightness(1.08)}
 .note{margin-top:24px;background:#f0ebe1;border-left:5px solid var(--gold);padding:14px 16px;border-radius:10px;font-size:15px;line-height:1.5}
+.quick-links{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:12px;
+  margin:0 0 24px;
+}
+.quick-links a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:72px;
+  padding:14px 12px;
+  text-align:center;
+  text-decoration:none;
+  border:2px solid var(--green);
+  border-radius:14px;
+  background:var(--paper);
+  color:var(--green);
+  font-size:17px;
+  line-height:1.2;
+  font-weight:800;
+}
+.quick-links a:first-child{
+  border-color:var(--brown);
+  color:var(--brown);
+}
+.quick-links a:hover{
+  background:#eef2ed;
+  transform:translateY(-1px);
+}
 footer{text-align:center;color:var(--muted);font-size:14px;padding-top:24px}
 @media(max-width:800px){
   .projects{grid-template-columns:1fr}
   .card.memory{grid-column:auto}
   .route-grid{grid-template-columns:1fr}
+  .quick-links{grid-template-columns:1fr 1fr}
+  .quick-links a:last-child{grid-column:1/-1}
   .hero h1{font-size:34px}
 }
 </style>
@@ -61,6 +93,14 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding-top:24px}
     <p>Your five ChatGPT Projects, what each one owns, and when to use it.</p>
     <div class="rule"><strong>Simple rule:</strong> when the current truth changes, update Operating Memory. Then send the actual work to the Project that owns it.</div>
   </section>
+
+  <nav class="quick-links" aria-label="ChatGPT Project shortcuts">
+    <a href="https://chatgpt.com/g/g-p-6abeeea855408191ac129516ce260d04-operating-memory/c/6abef084-3684-83e8-849e-aa56245d4a8e" target="_blank" rel="noopener">Operating Memory</a>
+    <a href="https://chatgpt.com/g/g-p-6abeeeb98c7881918bf82bd7a453ce6a-completion-officer/c/6abef0c0-6638-83e8-aa5d-f5938ea63581" target="_blank" rel="noopener">Completion Officer</a>
+    <a href="https://chatgpt.com/g/g-p-6abeeec69e8081919a7d00d4e1f12b0b-production-desk/c/6abef0a3-2f60-83e8-97f7-dc419a83c7e3" target="_blank" rel="noopener">Production Desk</a>
+    <a href="https://chatgpt.com/c/6abef0d6-cd6c-83e8-ad93-728fb3bbac71" target="_blank" rel="noopener">Business Development Desk</a>
+    <a href="https://chatgpt.com/c/6abef0ef-f7b8-83e8-8027-73403541da36" target="_blank" rel="noopener">App Factory</a>
+  </nav>
 
   <section class="routing">
     <h2>Which Project do I use?</h2>
